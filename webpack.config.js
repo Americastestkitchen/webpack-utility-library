@@ -2,6 +2,7 @@ const path = require("path");
 const glob = require('glob');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src')
@@ -12,7 +13,11 @@ module.exports = {
 	output: {
 		filename: "bundle.js",
 		path: path.join(__dirname, "dist")
-	},
+  },
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    port: 8080
+  },
 	module: {
 		rules: [
 			{
@@ -51,6 +56,7 @@ module.exports = {
           extensions: ['html']
         }
       ]
-    })
+    }),
+    new UglifyJsPlugin()
   ]
 }
