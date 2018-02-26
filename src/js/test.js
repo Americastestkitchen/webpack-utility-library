@@ -1,4 +1,4 @@
-export function test1() {
+export default function() {
   const testName = 'one';
-  return console.log(`Test ${testName} loaded.`);
+  console.log(`Test ${testName} loaded.`);
 }

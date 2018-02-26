@@ -11,6 +11,11 @@
   <div class="grid">
     <div class="cell-1/2">
       <h1>Left Column</h1>
+      <button data-toggle-open="somecontent" aria-expanded="false">Hide Content</button>
+      <div data-toggle-content="somecontent" hidden aria-hidden="true">
+        This is the content to be hidden.
+        <button data-toggle-close="somecontent">Close</button>
+      </div>
     </div>
     <div class="cell-1/4">
       <h1>Middle Column</h1>
@@ -19,6 +24,6 @@
       <h1>Right Column</h1>
     </div>
   </div>
-  <script src="./dist/bundle.js"></script>
+  <script src="dist/bundle.js"></script>
 </body>
 </html>
