@@ -11,8 +11,8 @@ export default function() {
   for(let i = 0; i < toggleOpen.length; i++) {
     toggleOpen[i].addEventListener('click', function(e){
       e.stopPropagation();
-      let button = this.getAttribute('data-toggle-open');
-      let container = document.querySelector(`[data-toggle-content='${button}'`);
+      const button = this.getAttribute('data-toggle-open');
+      const container = document.querySelector(`[data-toggle-content='${button}'`);
       if(container) {
         if(container.hidden) {
           this.setAttribute('aria-expanded', 'true');
@@ -28,9 +28,9 @@ export default function() {
 
     toggleClose[i].addEventListener('click', function(e){
       e.stopPropagation();
-      let button = this.getAttribute('data-toggle-close');
-      let buttonExapended = document.querySelector(`[data-toggle-open='${button}'`);
-      let container = document.querySelector(`[data-toggle-content='${button}'`);
+      const button = this.getAttribute('data-toggle-close');
+      const buttonExapended = document.querySelector(`[data-toggle-open='${button}'`);
+      const container = document.querySelector(`[data-toggle-content='${button}'`);
       if(container) {
         closeToggle(buttonExapended, container);
       }

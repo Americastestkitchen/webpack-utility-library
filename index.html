@@ -8,22 +8,31 @@
   <link rel="stylesheet" href="dist/styles.css">
 </head>
 <body>
-  <div class="grid">
-    <div class="cell-1/2">
-      <h1>Left Column</h1>
-      <button data-toggle-open="somecontent" aria-expanded="false">Hide Content</button>
-      <div data-toggle-content="somecontent" hidden aria-hidden="true">
-        This is the content to be hidden.
-        <button data-toggle-close="somecontent">Close</button>
-      </div>
-    </div>
-    <div class="cell-1/4">
-      <h1>Middle Column</h1>
-    </div>
-    <div class="cell-1/4">
-      <h1>Right Column</h1>
-    </div>
+  <button data-toggle-open="somecontent" aria-expanded="false">Show Form</button>
+  <div data-toggle-content="somecontent" hidden aria-hidden="true">
+    
+    <button data-toggle-close="somecontent">Close Form</button>
   </div>
+  <form action="" class="validate">
+    <div class="cell-auto fw-w">
+      <label for="date" class="t-alt-bold ts-lg mb-sm d-ib lh-sm">Enter a Date</label>
+      <input class="cell-full ph-sm br-sm ih-sm b-s-md bc-steel-grey error" type="date" aria-describedby="error-for-date" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" name="coverage_start_date" id="coverage_start_date" required aria-required="true">
+      <div class="error-message tc-red" id="error-for-coverage_start_date" hidden></div>
+    </div>
+    <div class="cell-auto fw-w">
+      <label for="email" class="t-alt-bold ts-lg mb-sm d-ib lh-sm">Please enter your email address</label>
+      <input 
+        class="cell-full ph-sm br-sm ih-sm b-s-md bc-steel-grey" 
+        type="email"
+        aria-describedby="msg-email"
+        pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
+        name="email" 
+        id="email" 
+        required aria-required="true">
+      <div class="error-message tc-red" id="error-for-email" hidden></div>
+    </div>
+    <button type="submit">Submit</button>    
+  </form>
   <script src="dist/bundle.js"></script>
 </body>
 </html>
